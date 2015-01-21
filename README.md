@@ -10,11 +10,11 @@ Register configuration exporter route;
  RouteTable.Routes.MapConfigExporter();
  ```
  
-Set configuration export mode;
- ```xml
-  <add key="configr:Mode" value="Section" /> <!-- Mode Section | Keys-->
- ```
+Set configuration export mode;  
  **Mode: SECTION**  
+  ```xml
+  <add key="configr:Mode" value="Section" />
+ ```
  Add configuration section to web.config;
  ```xml
  <section name="configExporter" type="AspNet.Mvc.ConfigurationExporter.Section.ConfigrSectionHandler,
