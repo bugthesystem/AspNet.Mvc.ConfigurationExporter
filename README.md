@@ -42,6 +42,7 @@ Add following settings to appSettings;
 <add key="CKey" value="12" />
 <add key="DKey" value="Github" />
 <add key="configr:Keys" value="AKey|BKey|CKey|DKey" />
+ <add key="configr:Mode" value="Keys" />
 ```
 Add following script tag to your page;
 ```html
