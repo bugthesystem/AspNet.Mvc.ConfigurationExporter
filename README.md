@@ -35,7 +35,7 @@ Identify configration export mode;
   ```
 **Mode: KEYS**  
 
-Add following app settings key to appSettings;
+Add following settings to appSettings;
 ```xml
 <add key="AKey" value="true" />
 <add key="BKey" value="false" />
