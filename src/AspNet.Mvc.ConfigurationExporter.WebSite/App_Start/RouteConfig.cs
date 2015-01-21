@@ -9,7 +9,7 @@ namespace AspNet.Mvc.ConfigurationExporter.WebSite
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            RouteTable.Routes.MapConfigR();
+            RouteTable.Routes.MapConfigExporter();
 
             routes.MapRoute(
                 name: "Default",

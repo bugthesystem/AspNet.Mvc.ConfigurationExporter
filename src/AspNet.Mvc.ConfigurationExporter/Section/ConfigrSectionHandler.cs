@@ -16,7 +16,7 @@ namespace AspNet.Mvc.ConfigurationExporter.Section
 
         public static ConfigrSectionHandler GetConfig()
         {
-            return ConfigurationManager.GetSection("exposeConfigr") as ConfigrSectionHandler;
+            return ConfigurationManager.GetSection("configExporter") as ConfigrSectionHandler;
         }
     }
 }
