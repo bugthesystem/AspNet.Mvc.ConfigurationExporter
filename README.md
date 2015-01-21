@@ -10,7 +10,7 @@ Register configuration exporter route;
  RouteTable.Routes.MapConfigExporter();
  ```
  
-Identify configration export mode;
+Set configuration export mode;
  ```xml
   <add key="configr:Mode" value="Section" /> <!-- Mode Section | Keys-->
  ```
