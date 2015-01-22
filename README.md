@@ -5,6 +5,11 @@ Provides server side configurations to available on client side
 HOW TO USE
 ---------------------------
 
+To install AspNet.Mvc.ConfigurationExporter;
+```
+Install-Package AspNet.Mvc.ConfigurationExporter
+```
+
 Register configuration exporter route;
 ```csharp
  RouteTable.Routes.MapConfigExporter();
