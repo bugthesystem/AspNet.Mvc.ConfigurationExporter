@@ -7,7 +7,10 @@
         <authors>Ziya SARIKAYA</authors>
         <owners>ziyasal</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Provides server side configurations to available on client side.</description>
+        <description>
+          Provides server side configurations to available on client side.
+          Documentation: https://github.com/ziyasal/AspNet.Mvc.ConfigurationExporter/blob/master/README.md
+        </description>
         <summary>Provides server side configurations to available on client side.</summary>
         <language>en-US</language>
         <tags>appSettings json js mvc</tags>
@@ -16,6 +19,6 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\AspNet.Mvc.ConfigurationExporter.dll" target="lib\net451\AspNet.Mvc.ConfigurationExporter.dll" />
+        <file src="bin\Release\AspNet.Mvc.ConfigurationExporter.dll" target="lib\net45\AspNet.Mvc.ConfigurationExporter.dll" />
     </files>
 </package>
