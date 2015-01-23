@@ -45,9 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNet.Mvc.ConfigurationExporter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AspNet.Mvc.ConfigurationExporter, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AspNet.Mvc.ConfigurationExporter.1.0.0\lib\net45\AspNet.Mvc.ConfigurationExporter.dll</HintPath>
+      <HintPath>..\packages\AspNet.Mvc.ConfigurationExporter.1.0.1\lib\net45\AspNet.Mvc.ConfigurationExporter.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

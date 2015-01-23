@@ -22,13 +22,13 @@ Set configuration export mode;
  ```
  Add configuration section to web.config;
  ```xml
- <section name="configExporter" type="AspNet.Mvc.ConfigurationExporter.Section.ConfigrSectionHandler,
+ <section name="exportConfigr" type="AspNet.Mvc.ConfigurationExporter.Section.ConfigrSectionHandler,
  AspNet.Mvc.ConfigurationExporter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
  ```
  
   Add configuration section values to web.config;
   ```xml
-   <configExporter>
+   <exportConfigr>
     <appSettings>
       <add key="AKey" value="true" />
       <add key="BKey" value="false" />
@@ -36,7 +36,7 @@ Set configuration export mode;
       <add key="DKey" value="Github" />
       <add key="EKey" value="Look ma!" />
     </appSettings>
-  </configExporter>
+  </exportConfigr>
   ```
 **Mode: KEYS**  
 
