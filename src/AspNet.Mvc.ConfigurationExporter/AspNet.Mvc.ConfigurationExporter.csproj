@@ -58,7 +58,7 @@
     <Compile Include="Contants.cs" />
     <Compile Include="IConfigrSettingsSerializer.cs" />
     <Compile Include="IAppSettingsProvider.cs" />
-    <Compile Include="IScriptHelper.cs" />
+    <Compile Include="IScriptBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingExtensions.cs" />
     <Compile Include="ScriptBuilder.cs" />

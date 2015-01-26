@@ -1,6 +1,6 @@
 ﻿namespace AspNet.Mvc.ConfigurationExporter
 {
-    public interface IScriptHelper
+    public interface IScriptBuilder
     {
         string GetUserDefinedNamespace();
     }

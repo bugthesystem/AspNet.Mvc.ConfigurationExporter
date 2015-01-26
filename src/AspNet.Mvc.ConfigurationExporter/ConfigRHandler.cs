@@ -10,15 +10,15 @@ namespace AspNet.Mvc.ConfigurationExporter
         private const string DefaultNamespaceScript = @"window.configuration = window.configuration || ";
 
         private readonly IAppSettingsProvider _appSettingsProvider;
-        private readonly IScriptHelper _scriptHelper;
+        private readonly IScriptBuilder _scriptBuilder;
         private readonly IConfigrSettingsSerializer _settingsSerializer;
 
         public ConfigrHandler(RequestContext requestContext, IConfigrSettingsSerializer settingsSerializer,
-            IAppSettingsProvider appSettingsProvider, IScriptHelper scriptHelper)
+            IAppSettingsProvider appSettingsProvider, IScriptBuilder scriptBuilder)
         {
             _settingsSerializer = settingsSerializer;
             _appSettingsProvider = appSettingsProvider;
-            _scriptHelper = scriptHelper;
+            _scriptBuilder = scriptBuilder;
             RequestContext = requestContext;
         }
 
@@ -33,7 +33,7 @@ namespace AspNet.Mvc.ConfigurationExporter
             {
                 context.Response.Clear();
                 context.Response.ContentType = "text/javascript";
-                string userDefinedNamespace = _scriptHelper.GetUserDefinedNamespace();
+                string userDefinedNamespace = _scriptBuilder.GetUserDefinedNamespace();
                 string js = string.Format(ScriptTemplate,
                     String.IsNullOrEmpty(userDefinedNamespace) ? DefaultNamespaceScript : userDefinedNamespace,
                     settingsJsonString);

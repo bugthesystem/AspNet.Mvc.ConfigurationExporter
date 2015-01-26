@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AspNet.Mvc.ConfigurationExporter
 {
-    public class ScriptBuilder : IScriptHelper
+    public class ScriptBuilder : IScriptBuilder
     {
         private readonly IAppSettingsProvider _appSettingsProvider;
 
