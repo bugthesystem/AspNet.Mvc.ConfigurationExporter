@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigHandler.cs" />
+    <Compile Include="ConfigrRouteHandler.cs" />
     <Compile Include="ConfigrSettingsSerializer.cs" />
     <Compile Include="ConfigrHandler.cs" />
     <Compile Include="Contants.cs" />
