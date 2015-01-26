@@ -14,7 +14,7 @@ namespace AspNet.Mvc.ConfigurationExporter
         }
         public IHttpHandler GetHttpHandler(RequestContext requestContext)
         {
-            return new ConfigrHandler(requestContext, new ConfigrSettingsSerializer(_configuration), new ExposeModeDetector());
+            return new ConfigrHandler(requestContext, new ConfigrSettingsSerializer(_configuration), new SettingProvider());
         }
     }
 }

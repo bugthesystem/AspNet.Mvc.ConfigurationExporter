@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AspNet.Mvc.ConfigurationExporter
 {
-    public class ExposeModeDetector : IExposeModeDetector
+    public class SettingProvider : ISettingProvider
     {
-        public SettingsExposeMode Detect()
+        public SettingsExposeMode GetExposeMode()
         {
             SettingsExposeMode result = SettingsExposeMode.Keys;
 
@@ -17,6 +21,11 @@ namespace AspNet.Mvc.ConfigurationExporter
             }
 
             return result;
+        }
+
+        public string GetNamespace()
+        {
+            return ConfigurationManager.AppSettings.Get(Contants.NamespaceKey);
         }
     }
 }
