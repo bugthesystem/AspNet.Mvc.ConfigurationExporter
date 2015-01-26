@@ -17,7 +17,7 @@ namespace AspNet.Mvc.ConfigurationExporter
 
         public string Serialize(SettingsExposeMode mode, string configKey = null)
         {
-            Dictionary<string, string> appSettingsDictionary = new Dictionary<string, string>();
+            var appSettingsDictionary = new Dictionary<string, string>();
 
             switch (mode)
             {
@@ -38,14 +38,16 @@ namespace AspNet.Mvc.ConfigurationExporter
 
         private Dictionary<string, string> SerializeFromSection()
         {
-            return _configrSection.AppSettings.Cast<AppSettings>().ToDictionary(settings => settings.Key, settings => settings.Value);
+            return _configrSection.AppSettings.Cast<AppSettings>()
+                .ToDictionary(settings => settings.Key, settings => settings.Value);
         }
 
         private Dictionary<string, string> SerializeFromKeys(string configKey)
         {
-            Dictionary<string, string> result = new Dictionary<string, string>();
+            var result = new Dictionary<string, string>();
 
             string keysToSerialize = ConfigurationManager.AppSettings.Get(configKey);
+
             if (!string.IsNullOrEmpty(keysToSerialize))
             {
                 string[] keys = keysToSerialize.Split('|');

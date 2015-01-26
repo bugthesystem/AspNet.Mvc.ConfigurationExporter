@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AspNet.Mvc.ConfigurationExporter
 {
-    public class SettingProvider : ISettingProvider
+    public class AppSettingsProvider : IAppSettingsProvider
     {
         public SettingsExposeMode GetExposeMode()
         {
-            SettingsExposeMode result = SettingsExposeMode.Keys;
+            var result = SettingsExposeMode.Keys;
 
             string modeSettings = ConfigurationManager.AppSettings.Get(Contants.ModeKey);
 

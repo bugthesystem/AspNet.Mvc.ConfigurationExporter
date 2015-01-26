@@ -6,10 +6,7 @@ namespace AspNet.Mvc.ConfigurationExporter.Section
     {
         public AppSettings this[int index]
         {
-            get
-            {
-                return BaseGet(index) as AppSettings;
-            }
+            get { return BaseGet(index) as AppSettings; }
             set
             {
                 if (BaseGet(index) != null)
@@ -28,7 +25,7 @@ namespace AspNet.Mvc.ConfigurationExporter.Section
 
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((AppSettings)element).Key;
+            return ((AppSettings) element).Key;
         }
     }
 }
