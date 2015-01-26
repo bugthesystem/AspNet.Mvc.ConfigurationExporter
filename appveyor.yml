@@ -4,8 +4,8 @@ branches:
     - master
 
 before_build:
-  - nuget restore AspNet.Mvc.ConfigurationExporter.sln
+  - nuget restore src/AspNet.Mvc.ConfigurationExporter.sln
 
 build:
-  project: AspNet.Mvc.ConfigurationExporter.sln       
+  project: src/AspNet.Mvc.ConfigurationExporter.sln       
   verbosity: minimal
