@@ -1,6 +1,7 @@
 # AspNet.Mvc.ConfigurationExporter
 Provides server side configurations to available on client side
 
+[![Build status](https://ci.appveyor.com/api/projects/status/fechy6cptv9t79g8?svg=true)](https://ci.appveyor.com/project/ziyasal/aspnet-mvc-configurationexporter)
 
 HOW TO USE
 ---------------------------
