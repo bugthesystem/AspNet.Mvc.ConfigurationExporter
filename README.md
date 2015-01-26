@@ -59,4 +59,11 @@ Access from js;
 ```js
 console.log(window.configuration.AKey);
 ```
- 
+ Alternatively you can declare a namespace in App.config like this.
+   ```xml
+  <add key="configr:Namespace" value="github.config" />
+ ```
+ and access from js like this :
+ ```js
+console.log(github.config);
+```

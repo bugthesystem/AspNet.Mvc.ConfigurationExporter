@@ -3,11 +3,11 @@ using System.Configuration;
 
 namespace AspNet.Mvc.ConfigurationExporter
 {
-    public class ExposeModeDetector : IExposeModeDetector
+    public class AppSettingsProvider : IAppSettingsProvider
     {
-        public SettingsExposeMode Detect()
+        public SettingsExposeMode GetExposeMode()
         {
-            SettingsExposeMode result = SettingsExposeMode.Keys;
+            var result = SettingsExposeMode.Keys;
 
             string modeSettings = ConfigurationManager.AppSettings.Get(Contants.ModeKey);
 
@@ -17,6 +17,11 @@ namespace AspNet.Mvc.ConfigurationExporter
             }
 
             return result;
+        }
+
+        public string GetNamespace()
+        {
+            return ConfigurationManager.AppSettings.Get(Contants.NamespaceKey);
         }
     }
 }

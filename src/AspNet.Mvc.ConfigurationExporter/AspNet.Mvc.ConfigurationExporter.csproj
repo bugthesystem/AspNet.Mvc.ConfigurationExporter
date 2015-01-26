@@ -56,15 +56,17 @@
     <Compile Include="ConfigrSettingsSerializer.cs" />
     <Compile Include="ConfigrHandler.cs" />
     <Compile Include="Contants.cs" />
-    <Compile Include="ExposeModeDetector.cs" />
     <Compile Include="IConfigrSettingsSerializer.cs" />
-    <Compile Include="IExposeModeDetector.cs" />
+    <Compile Include="IAppSettingsProvider.cs" />
+    <Compile Include="IScriptHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingExtensions.cs" />
+    <Compile Include="ScriptBuilder.cs" />
     <Compile Include="Section\AppSettings.cs" />
     <Compile Include="Section\AppSettingsCollection.cs" />
     <Compile Include="Section\ConfigrSectionHandler.cs" />
     <Compile Include="Section\IConfigrSectionHandler.cs" />
+    <Compile Include="AppSettingsProvider.cs" />
     <Compile Include="SettingsExposeMode.cs" />
   </ItemGroup>
   <ItemGroup>

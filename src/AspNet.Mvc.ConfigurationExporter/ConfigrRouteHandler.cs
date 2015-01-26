@@ -12,9 +12,12 @@ namespace AspNet.Mvc.ConfigurationExporter
         {
             _configuration = ConfigrSectionHandler.GetConfig();
         }
+
         public IHttpHandler GetHttpHandler(RequestContext requestContext)
         {
-            return new ConfigrHandler(requestContext, new ConfigrSettingsSerializer(_configuration), new ExposeModeDetector());
+            var appSettingsProvider = new AppSettingsProvider();
+            return new ConfigrHandler(requestContext, new ConfigrSettingsSerializer(_configuration), appSettingsProvider,
+                new ScriptBuilder(appSettingsProvider));
         }
     }
 }
