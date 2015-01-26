@@ -40,5 +40,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        MGM = window.MGM || {};
+        MGM.test = MGM.test || {};
+        MGM.test.app = MGM.test.app || {
+            init: function () {
+
+            }
+        };
+    </script>
 </body>
 </html>

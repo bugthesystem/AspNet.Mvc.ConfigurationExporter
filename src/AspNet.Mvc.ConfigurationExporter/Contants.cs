@@ -4,5 +4,6 @@
     {
         public static string ModeKey = "configr:Mode";
         public static string KeysArrayKey = "configr:Keys";
+        public static string NamespaceKey = "configr:Namespace";
     }
 }
