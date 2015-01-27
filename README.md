@@ -67,5 +67,5 @@ console.log(window.configuration.AKey);
  ```
  and access from js like this :
  ```js
-console.log(github.config);
+console.log(github.config.AKey);
 ```
