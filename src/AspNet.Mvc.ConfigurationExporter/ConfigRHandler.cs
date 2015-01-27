@@ -6,8 +6,7 @@ namespace AspNet.Mvc.ConfigurationExporter
 {
     public class ConfigrHandler : IHttpHandler
     {
-        private const string ScriptTemplate = @";(function(){{ {0} JSON.parse('{1}'); }})();";
-        private const string DefaultNamespaceScript = @"window.configuration = window.configuration || ";
+      
 
         private readonly IAppSettingsProvider _appSettingsProvider;
         private readonly IScriptBuilder _scriptBuilder;
@@ -33,10 +32,7 @@ namespace AspNet.Mvc.ConfigurationExporter
             {
                 context.Response.Clear();
                 context.Response.ContentType = "text/javascript";
-                string userDefinedNamespace = _scriptBuilder.GetUserDefinedNamespace();
-                string js = string.Format(ScriptTemplate,
-                    String.IsNullOrEmpty(userDefinedNamespace) ? DefaultNamespaceScript : userDefinedNamespace,
-                    settingsJsonString);
+                string js = _scriptBuilder.Build(settingsJsonString);
                 context.Response.Write(js);
                 context.Response.End();
             }

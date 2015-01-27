@@ -6,6 +6,9 @@ namespace AspNet.Mvc.ConfigurationExporter
 {
     public class ScriptBuilder : IScriptBuilder
     {
+        private const string ScriptTemplate = @";(function(){{ {0} JSON.parse('{1}'); }})();";
+        private const string DefaultNamespaceScript = @"window.configuration = window.configuration || ";
+
         private readonly IAppSettingsProvider _appSettingsProvider;
 
         public ScriptBuilder(IAppSettingsProvider appSettingsProvider)
@@ -13,7 +16,7 @@ namespace AspNet.Mvc.ConfigurationExporter
             _appSettingsProvider = appSettingsProvider;
         }
 
-        public string GetUserDefinedNamespace()
+        private string GetUserDefinedNamespace()
         {
             var result = new StringBuilder();
 
@@ -44,6 +47,12 @@ namespace AspNet.Mvc.ConfigurationExporter
             }
 
             return result.ToString();
+        }
+
+        public string Build(string json)
+        {
+            string ns = GetUserDefinedNamespace();
+            return string.Format(ScriptTemplate, String.IsNullOrEmpty(ns) ? DefaultNamespaceScript : ns, json);
         }
     }
 }

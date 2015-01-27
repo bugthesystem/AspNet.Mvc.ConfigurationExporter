@@ -2,6 +2,6 @@
 {
     public interface IScriptBuilder
     {
-        string GetUserDefinedNamespace();
+        string Build(string json);
     }
 }

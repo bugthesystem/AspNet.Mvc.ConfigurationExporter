@@ -16,8 +16,10 @@ namespace AspNet.Mvc.ConfigurationExporter
         public IHttpHandler GetHttpHandler(RequestContext requestContext)
         {
             var appSettingsProvider = new AppSettingsProvider();
-            return new ConfigrHandler(requestContext, new ConfigrSettingsSerializer(_configuration), appSettingsProvider,
-                new ScriptBuilder(appSettingsProvider));
+            var configrSettingsSerializer = new ConfigrSettingsSerializer(_configuration);
+            var scriptBuilder = new ScriptBuilder(appSettingsProvider);
+
+            return new ConfigrHandler(requestContext, configrSettingsSerializer, appSettingsProvider, scriptBuilder);
         }
     }
 }
