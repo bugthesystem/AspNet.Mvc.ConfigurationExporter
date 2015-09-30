@@ -15,7 +15,7 @@ Register configuration exporter route;
 ```csharp
  RouteTable.Routes.MapConfigExporter();
  ```
- 
+
 Set configuration export mode;  
  **Mode: SECTION**  
   ```xml
@@ -26,7 +26,7 @@ Set configuration export mode;
  <section name="exportConfigr" type="AspNet.Mvc.ConfigurationExporter.Section.ConfigrSectionHandler,
  AspNet.Mvc.ConfigurationExporter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
  ```
- 
+
   Add configuration section values to web.config;
   ```xml
    <exportConfigr>
@@ -50,6 +50,42 @@ Add following settings to appSettings;
 <add key="configr:Keys" value="AKey|BKey|CKey|DKey" />
  <add key="configr:Mode" value="Keys" />
 ```
+
+###Export property values from custom types
+
+**Suppose that we have a type and we'd like to make its properties available on client side which marked with `ConfigrExported`**
+```csharp
+
+public interface ITestConfiguration
+  {
+      int TestInt { get; }
+      string TestString { get; }
+      int TestProperty { get; }
+  }
+
+  public class TestConfiguration : ITestConfiguration
+  {
+      public int TestInt { get { return 20; } }
+
+      [ConfigrExported]
+      public string TestString { get { return "https://github.com/PanteonProject"; } }
+
+      [ConfigrExported(Name = "testName")]
+      public int TestProperty { get { return 10; } }
+
+  }
+```
+Register type to exporter;  
+
+```csharp
+
+Exporter.Instance.RegisterType<ITestConfiguration>(type => DependencyResolver.Current.GetService(type),
+                                                           BindingFlags.Public | BindingFlags.Instance);
+//OR
+Exporter.Instance.RegisterType<ITestConfiguration>(type => (ITestConfiguration)new TestConfiguration());
+```
+
+
 Add following script tag to your page;
 ```html
 <script type="text/javascript" src="~/configr"></script>

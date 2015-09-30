@@ -31,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,10 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigrExportedAttribute.cs" />
+    <Compile Include="InstanceMode.cs" />
     <Compile Include="ConfigrRouteHandler.cs" />
     <Compile Include="ConfigrSettingsSerializer.cs" />
     <Compile Include="ConfigrHandler.cs" />
     <Compile Include="Contants.cs" />
+    <Compile Include="Exporter.cs" />
     <Compile Include="IConfigrSettingsSerializer.cs" />
     <Compile Include="IAppSettingsProvider.cs" />
     <Compile Include="IScriptBuilder.cs" />
@@ -87,7 +91,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties StartAt="635579108922600672" Versioning="0" IncrementAction="2" IncrementOnBuild="False" IncrementOnRebuild="True" IncrementInformational="False" />
+      <UserProperties IncrementInformational="False" IncrementOnRebuild="True" IncrementOnBuild="False" IncrementAction="2" Versioning="0" StartAt="635579108922600672" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

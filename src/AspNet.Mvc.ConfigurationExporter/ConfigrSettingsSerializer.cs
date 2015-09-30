@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using AspNet.Mvc.ConfigurationExporter.Section;
 using Newtonsoft.Json;
 
@@ -33,13 +35,40 @@ namespace AspNet.Mvc.ConfigurationExporter
                     break;
             }
 
+            SerializeExports(appSettingsDictionary);
+
             return JsonConvert.SerializeObject(appSettingsDictionary);
+        }
+
+        private void SerializeExports(Dictionary<string, string> appSettingsDictionary)
+        {
+            foreach (KeyValuePair<Type, Tuple<BindingFlags, Func<Type, object>>> export in Exporter.Instance.Exports)
+            {
+                object instance = export.Value.Item2(export.Key);
+                if (instance != null)
+                {
+                    PropertyInfo[] propertyInfos = instance.GetType().GetProperties(export.Value.Item1);
+                    foreach (PropertyInfo property in propertyInfos)
+                    {
+                        ConfigrExportedAttribute attribute = property.GetCustomAttribute<ConfigrExportedAttribute>();
+
+                        if (attribute != null)
+                        {
+                            object value = property.GetValue(instance, null);
+
+                            if (value != null)
+                            {
+                                appSettingsDictionary.Add(!string.IsNullOrEmpty(attribute.Name) ? attribute.Name : property.Name, value.ToString());
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private Dictionary<string, string> SerializeFromSection()
         {
-            return _configrSection.AppSettings.Cast<AppSettings>()
-                .ToDictionary(settings => settings.Key, settings => settings.Value);
+            return _configrSection.AppSettings.Cast<AppSettings>().ToDictionary(settings => settings.Key, settings => settings.Value);
         }
 
         private Dictionary<string, string> SerializeFromKeys(string configKey)
