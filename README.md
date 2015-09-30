@@ -79,8 +79,9 @@ Register type to exporter;
 
 ```csharp
 
-Exporter.Instance.RegisterType<ITestConfiguration>(type => DependencyResolver.Current.GetService(type),
-                                                           BindingFlags.Public | BindingFlags.Instance);
+Exporter.Instance.RegisterType<ITestConfiguration>(type => 
+                    DependencyResolver.Current.GetService(type),
+                    BindingFlags.Public | BindingFlags.Instance);
 //OR
 Exporter.Instance.RegisterType<ITestConfiguration>(type => (ITestConfiguration)new TestConfiguration());
 ```
