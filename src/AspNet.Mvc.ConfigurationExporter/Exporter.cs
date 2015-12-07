@@ -18,7 +18,7 @@ namespace AspNet.Mvc.ConfigurationExporter
         }
 
 
-        public void RegisterType<T>( Func<Type, object> resolver, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance)
+        public void RegisterType<T>(Func<Type, object> resolver, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
 
         {
             if (!Exports.ContainsKey(typeof(T)))
