@@ -8,7 +8,7 @@ HOW TO USE
 
 To install AspNet.Mvc.ConfigurationExporter;
 ```
-Install-Package AspNet.Mvc.ConfigurationExporter
+ Install-Package AspNet.Mvc.ConfigurationExporter
 ```
 
 Register configuration exporter route;
