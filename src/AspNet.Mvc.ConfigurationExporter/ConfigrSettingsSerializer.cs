@@ -50,7 +50,7 @@ namespace AspNet.Mvc.ConfigurationExporter
                     PropertyInfo[] propertyInfos = instance.GetType().GetProperties(export.Value.Item1);
                     foreach (PropertyInfo property in propertyInfos)
                     {
-                        ConfigrExportedAttribute attribute = property.GetCustomAttribute<ConfigrExportedAttribute>();
+                        ConfigrExportableAttribute attribute = property.GetCustomAttribute<ConfigrExportableAttribute>();
 
                         if (attribute != null)
                         {

@@ -12,10 +12,11 @@
     public class TestConfiguration : ITestConfiguration
     {
         public int Db { get { return 20; } }
-        [ConfigrExported]
+
+        [ConfigrExportable]
         public string AppUrl { get { return "https://github.com/PanteonProject"; } }
 
-        [ConfigrExported(Name = "testName")]
+        [ConfigrExportable(Name = "testName")]
         public int Test { get { return 10; } }
 
     }

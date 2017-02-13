@@ -1,13 +1,10 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using System.Web.Routing;
 
 namespace AspNet.Mvc.ConfigurationExporter
 {
     public class ConfigrHandler : IHttpHandler
     {
-      
-
         private readonly IAppSettingsProvider _appSettingsProvider;
         private readonly IScriptBuilder _scriptBuilder;
         private readonly IConfigrSettingsSerializer _settingsSerializer;
@@ -38,9 +35,6 @@ namespace AspNet.Mvc.ConfigurationExporter
             }
         }
 
-        public virtual bool IsReusable
-        {
-            get { return true; }
-        }
+        public virtual bool IsReusable => true;
     }
 }
