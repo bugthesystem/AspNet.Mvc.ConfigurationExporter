@@ -67,10 +67,10 @@ public interface ITestConfiguration
   {
       public int TestInt { get { return 20; } }
 
-      [ConfigrExported]
+      [ConfigrExportable]
       public string TestString { get { return "https://github.com/PanteonProject"; } }
 
-      [ConfigrExported(Name = "testName")]
+      [ConfigrExportable(Name = "testName")]
       public int TestProperty { get { return 10; } }
 
   }
@@ -102,7 +102,7 @@ console.log(window.configuration.AKey);
    ```xml
   <add key="configr:Namespace" value="github.config" />
  ```
- and access from js like this :
+ and access from js :
  ```js
 console.log(github.config.AKey);
 ```
