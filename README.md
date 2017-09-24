@@ -51,9 +51,9 @@ Add following settings to appSettings;
  <add key="configr:Mode" value="Keys" />
 ```
 
-###Export property values from custom types
+### Export property values from custom types
 
-**Suppose that we have a type and we'd like to make its properties available on client side which marked with `ConfigrExported`**
+**Suppose that we have a type and we'd like to make its properties available on client side which marked with `ConfigrExportable`**
 ```csharp
 
 public interface ITestConfiguration
